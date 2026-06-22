@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 115%;
+        background: #e1dcc9;
+        line-height: 1.6;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #412d15;
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        padding-bottom: 4px;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #8d7764;
+      }
+
+      nav a.active {
+        color: #e1dcc9;
+        border-bottom: 2px solid #e1dcc9;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          position: static;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      /* Hero */
+      .welcome-text {
+        text-align: center;
+        color: #412d15;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-top: 0;
+        padding-top: 140px;
+
+        font-size: 16px;
+      }
+
+      .hero {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 140px;
+      }
+
+      .hero-image img {
+        width: 400px;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-content {
+        max-width: 500px;
+        text-align: left;
+      }
+
+      .hero-content h1 {
+        font-family: "Bernard MT Condensed", Georgia, serif;
+        font-weight: normal;
+        font-size: 5rem;
+        margin: 15px 0;
+        color: black;
+      }
+
+      .hero-content h2 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: 300;
+        text-align: justify;
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: black;
+      }
+
+      .highlight {
+        background-color: #412d15;
+        color: white;
+        padding: 0 0.15em;
+        border-radius: 3px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        background: #412d15;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 14px 24px;
+        border-radius: 60px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #8d7764;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+          padding: 100px 8% 60px;
+        }
+
+        .welcome-text {
+          padding-top: 100px;
+        }
+
+        .hero-content {
+          text-align: center;
+        }
+
+        .hero-content h1 {
+          font-size: 3rem;
+        }
+
+        .hero-content h2 {
+          font-size: 18px;
+          text-align: left;
+        }
+
+        .hero-image img {
+          width: 280px;
+          height: 350px;
+        }
+      }
+
+      /* Education */
+      #education {
+        background: #f5f1e8;
+        padding: 100px 10%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 60px;
+        color: #412d15;
+      }
+
+      .education-container {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .education-card {
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .education-row {
+        display: flex;
+        gap: 200px;
+        justify-content: center;
+      }
+
+      .education-year-col {
+        min-width: 220px;
+      }
+
+      .education-school {
+        color: #412d15;
+        margin-bottom: 8px;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .education-year {
+        font-weight: bold;
+        color: #7a5c3d;
+      }
+
+      .education-info {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 500px;
+      }
+
+      .education-info h3 {
+        color: #412d15;
+        margin-bottom: 5px;
+        font-size: 22px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold;
+      }
+
+      .education-info p {
+        color: #000000;
+        line-height: 1.7;
+        font-weight: normal;
+        font-size: 16.5px;
+      }
+
+      @media (max-width: 768px) {
+        #education {
+          padding: 60px 6%;
+        }
+
+        .education-row {
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+          text-align: center;
+        }
+
+        .education-year-col {
+          min-width: auto;
+        }
+
+        .education-info {
+          max-width: 100%;
+        }
+      }
+
+      /* Footer */
+      footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 8%;
+        background: #111;
+        color: white;
+        flex-shrink: 0;
+      }
+
+      .footer-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        margin: 0;
+      }
+
+      .footer-link {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ccc;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .footer-link:hover {
+        color: #8d7764;
+      }
+
+      .footer-email {
+        font-size: 1.3rem;
+        color: #ccc;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        footer {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .footer-link {
+          position: static;
+          transform: none;
+        }
+
+        .footer-name,
+        .footer-email {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Nica Nachor</div>
+
+      <ul>
+        <li><a href="portfolio.html" class="active">Home</a></li>
+        <li><a href="wrisam.html">Writing Samples</a></li>
+        <li>
+          <a href="https://substack.com/@nnnscribbler/posts" target="_blank"
+            >Substack</a
+          >
+        </li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <section id="home">
+      <p class="welcome-text">Welcome To My Literary Space!</p>
+
+      <div class="hero">
+        <div class="hero-image">
+          <img src="pic.jpg" alt="Nica Nachor" />
+        </div>
+
+        <div class="hero-content">
+          <h1>I'm <span class="highlight">Nica</span></h1>
+
+          <h2>
+            A Philippine-based writer that turns stories and ideas into
+            impactful pieces that deeply connect with people. I am passionate
+            about writing short film manuscripts, novels, critical-reflective
+            essays, and articles about life, love, and how literature shapes us.
+          </h2>
+
+          <a
+            class="btn"
+            href="https://drive.google.com/file/d/1K63NEsndwnegIFGQ2WyPyenrJC0ZnqPD/view?usp=drive_link"
+            target="_blank"
+            >View My Resume</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="education-card">
+        <div class="education-row">
+          <div class="education-year-col">
+            <h4 class="education-school">
+              Polytechnic University of the Philippines
+            </h4>
+            <div class="education-year">2022 - 2026</div>
+          </div>
+
+          <div class="education-info">
+            <h3>Bachelor of Arts in Literary and Cultural Studies</h3>
+            <p>
+              Pursuing a degree in Literary and Cultural Studies at Polytechnic
+              University of the Philippines had played a major role in honing my
+              writing skills, both in the technical and creative aspects. Not
+              only did it provide me with a strong foundation in literary theory
+              and criticism, but it also allowed me to explore various forms of
+              creative writing. I have had the opportunity to experiment with
+              different genres and styles, including short stories, poetry, and
+              screenwriting. The rigorous coursework and production of various
+              writing projects have significantly improved my ability to craft
+              compelling narratives. Additionally, the exposure to diverse
+              literary works and critical analysis has enriched my understanding
+              of storytelling techniques and the power of language. <br />
+              <br />Sta. Mesa, Manila
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <h4 class="footer-name">Nica Nachor</h4>
+
+      <a
+        class="footer-link"
+        href="https://www.linkedin.com/in/nica-nachor-9a82b4292/"
+        target="_blank"
+        aria-label="LinkedIn"
+      >
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452z"
+          />
+        </svg>
+      </a>
+
+      <p class="footer-email">nicannachor@gmail.com</p>
+    </footer>
+  </body>
+</html>

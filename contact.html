@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 115%;
+        background: #e1dcc9;
+        line-height: 1.6;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #412d15;
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        padding-bottom: 4px;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #8d7764;
+      }
+
+      nav a.active {
+        color: #e1dcc9;
+        border-bottom: 2px solid #e1dcc9;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          position: static;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      /* Main content */
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .inquiry-section {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 140px 8% 60px;
+      }
+
+      .inquiry-content {
+        max-width: 650px;
+      }
+
+      .inquiry-content h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        color: #412d15;
+        margin-bottom: 24px;
+        font-weight: 700;
+      }
+
+      .inquiry-content p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.8;
+        margin-bottom: 24px;
+      }
+
+      .inquiry-content .email-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #412d15;
+        margin-bottom: 6px;
+      }
+
+      .inquiry-content .email-address {
+        font-size: 18px;
+        color: #333;
+      }
+
+      @media (max-width: 600px) {
+        .inquiry-content h1 {
+          font-size: 2rem;
+        }
+
+        .inquiry-content p,
+        .inquiry-content .email-label,
+        .inquiry-content .email-address {
+          font-size: 16px;
+        }
+
+        .inquiry-section {
+          padding: 120px 6% 50px;
+        }
+      }
+
+      /* Footer */
+      footer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 8%;
+        background: #111;
+        color: white;
+        flex-shrink: 0;
+      }
+
+      .footer-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        margin: 0;
+      }
+
+      .footer-link {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #ccc;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .footer-link:hover {
+        color: #8d7764;
+      }
+
+      .footer-email {
+        font-size: 1.3rem;
+        color: #ccc;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        footer {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+
+        .footer-link {
+          position: static;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Nica Nachor</div>
+
+      <ul>
+        <li><a href="portfolio.html">Home</a></li>
+        <li><a href="wrisam.html">Writing Samples</a></li>
+        <li>
+          <a href="https://substack.com/@nnnscribbler/posts" target="_blank"
+            >Substack</a
+          >
+        </li>
+        <li><a href="contact.html" class="active">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="inquiry-section">
+        <div class="inquiry-content">
+          <h1>Looking for a passionate writer? Work with me!</h1>
+          <p>
+            I can write and edit fiction and non-fiction content for
+            manuscripts, articles, essays, and blog posts. If you're interested
+            to turn your ideas into impactful works, contact me via email.
+          </p>
+          <p class="email-label">Email</p>
+          <p class="email-address">nicannachor@gmail.com</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h4 class="footer-name">Nica Nachor</h4>
+
+      <a
+        class="footer-link"
+        href="https://www.linkedin.com/in/nica-nachor-9a82b4292/"
+        target="_blank"
+        aria-label="LinkedIn"
+      >
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452z"
+          />
+        </svg>
+      </a>
+
+      <p class="footer-email">nicannachor@gmail.com</p>
+    </footer>
+  </body>
+</html>
